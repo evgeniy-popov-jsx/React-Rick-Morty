@@ -1,10 +1,11 @@
-import { getApiResources } from '../../utils/network';
 import { useEffect, useState } from 'react';
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
-import {API_URL} from '../../constants/api';
-import CharacterList from '../../components/CharacterPage/CharacterList';
 
-//import styles from './CharacterPage.module.css';
+import { withErrorApi } from '../../hoc-helpers/withErrorApi';
+import CharacterList from '../../components/CharacterPage/CharacterList';
+import { getApiResources } from '../../utils/network';
+import {API_URL} from '../../constants/api';
+
+import styles from './CharacterPage.module.css';
 
 
 const CharacterPage = ({ setErrorApi }) => {
