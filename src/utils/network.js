@@ -1,6 +1,3 @@
-const API_ROOT = 'https://rickandmortyapi.com/api/';
-const API_CHARACTER = 'character'; 
-
 export const getApiResources = async (url) => {
 
     try {
@@ -17,8 +14,3 @@ export const getApiResources = async (url) => {
         return false;
     }
 }
-
-// (async () => {
-//     const body = await getApiResources(API_ROOT+API_CHARACTER);
-//     console.log(body);
-// })();
