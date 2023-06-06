@@ -1,10 +1,10 @@
-import styles from './App.module.css'
-//import { getApiResources } from '../../utils/network';
+import CharacterPage from '../CharacterPage';
 
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   return (
-    <h1 className={styles.header}>Привет</h1>
+    <CharacterPage />
   )
 }
 
