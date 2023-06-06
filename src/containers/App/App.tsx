@@ -1,9 +1,10 @@
-import cn from 'classnames';
 import styles from './App.module.css'
+//import { getApiResources } from '../../utils/network';
+
 
 const App: React.FC = () => {
   return (
-    <h1 className={cn(styles.header, styles.text)}>Привет</h1>
+    <h1 className={styles.header}>Привет</h1>
   )
 }
 
