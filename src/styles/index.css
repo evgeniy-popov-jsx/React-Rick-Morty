@@ -2,6 +2,7 @@
   --bg-color: black;
   --text-color: black;
   --bg--accent: orange;
+  --font-size-header: 26px;
 
 }
 body {
@@ -9,4 +10,7 @@ body {
   padding: 0;
   background-color:var(--bg-color);
   font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: white;
 }
