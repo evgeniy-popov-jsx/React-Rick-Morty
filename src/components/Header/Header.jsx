@@ -7,6 +7,7 @@ const Header = () => {
             <ul className={styles.list__container}>
                 <li><NavLink to="/" exact="true">Home</NavLink></li>
                 <li><NavLink to="/characters" exact="true">Characters</NavLink></li>
+                <li><NavLink to="/not-found" exact="true">Not-found</NavLink></li>
             </ul>   
         </div>
     )
