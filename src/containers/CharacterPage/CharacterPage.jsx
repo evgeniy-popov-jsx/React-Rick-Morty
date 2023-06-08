@@ -1,15 +1,24 @@
 import { useEffect, useState } from 'react';
 
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
-import CharacterList from '../../components/CharacterPage/CharacterList';
+import CharacterList from '../../components/CharacterPage/CharacterList/CharacterList';
+import CharacterNavigation from '../../components/CharacterPage/CharacterNavigation';
 import { getApiResources } from '../../utils/network';
 import {API_URL} from '../../constants/api';
+import { useQueryParams } from '../../hooks/useQueryParams';
+import { getCharacterPageId } from '../../services/getCharacterData';
 
 import styles from './CharacterPage.module.css';
 
 
 const CharacterPage = ({ setErrorApi }) => {
-    const [character, setCharacter ] = useState(null);
+    const [ character, setCharacter ] = useState(null);
+    const [ prevPage, setPrevPage ] = useState(null);
+    const [ nextPage, setNextPage ] = useState(null);
+    const [ counterPage, setCounterPage ] = useState(1);
+
+    const query = useQueryParams();
+    const queryPage = query.get('page');
 
     const getResource = async (url) => {
         const res = await getApiResources(url);
@@ -23,8 +32,10 @@ const CharacterPage = ({ setErrorApi }) => {
                     id
                 }
             })
-
             setCharacter(characterList);
+            setPrevPage(res.info.prev);
+            setNextPage(res.info.next);
+            setCounterPage(getCharacterPageId(url));
             setErrorApi(false);
         } else {
             setErrorApi(true);
@@ -33,13 +44,18 @@ const CharacterPage = ({ setErrorApi }) => {
 
     useEffect(() => {
 
-        getResource(API_URL);
+        getResource(API_URL+queryPage);
         
     }, []);
 
     return (
         <>
-            <h1>Navigate</h1>
+            <CharacterNavigation 
+                getResource={getResource}
+                prevPage={prevPage}
+                nextPage={nextPage}
+                counterPage={counterPage}
+            />
             {character && <CharacterList character={character} />}
         </>
     )

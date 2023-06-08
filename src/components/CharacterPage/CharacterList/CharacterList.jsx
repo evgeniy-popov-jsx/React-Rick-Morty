@@ -1,4 +1,4 @@
-import styles from '../../components/CharacterPage/CharacterList.module.css'
+import styles from '../CharacterList/CharacterList.module.css';
 
 const CharacterList = ({ character } ) => {
 
