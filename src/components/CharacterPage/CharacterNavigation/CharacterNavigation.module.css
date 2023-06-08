@@ -1,8 +1,7 @@
-.buttons {
-    padding: 15px;
-    font-size: 15px;
+.container {
+    display: flex;
+    padding: 0 10px;
 }
-
-.link {
-    margin: 15px;
+.buttons {
+    margin: var(--spacing-small);
 }
