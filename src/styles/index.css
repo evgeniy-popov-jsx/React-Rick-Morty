@@ -43,3 +43,7 @@ img {
   color: var(--them-default-header);
   transition: color var(--transition);
 }
+
+::-webkit-scrollbar {
+  width: 0;
+}
