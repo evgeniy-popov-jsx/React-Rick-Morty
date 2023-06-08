@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import UiButton from '../../UI/UiButton';
+
 import styles from './CharacterNavigation.module.css';
 
 const CharacterNavigation= (props) => {
@@ -10,24 +12,20 @@ const CharacterNavigation= (props) => {
     
 
     return (
-        <div>
-            <Link to={`/characters/?page=${counterPage-1}`} className={styles.link}>
-                <button 
+        <div className={styles.container}>
+            <Link to={`/characters/?page=${counterPage-1}`} className={styles.buttons}>
+                <UiButton 
+                    text='Previous'
+                    onClick={handleChangePrev}
                     disabled={!prevPage}
-                    onClick={handleChangePrev} 
-                    className={styles.buttons}
-                >
-                    Previous
-                </button>
+                />
             </Link>
-            <Link to={`/characters/?page=${counterPage+1}`} className={styles.link}>
-                <button
+            <Link to={`/characters/?page=${counterPage+1}`} className={styles.buttons}>
+                <UiButton 
+                    text='Next'
                     disabled={!nextPage}
                     onClick={handleChangeNext}
-                    className={styles.buttons}
-                >
-                    Next
-                </button>
+                />
             </Link>
         </div>
     )
