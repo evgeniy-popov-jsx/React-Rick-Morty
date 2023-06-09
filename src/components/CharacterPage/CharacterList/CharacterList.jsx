@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from '../CharacterList/CharacterList.module.css';
 
 const CharacterList = ({ character } ) => {
@@ -6,10 +8,10 @@ const CharacterList = ({ character } ) => {
         <ul className={styles.list__container}>
             {character.map(({name, image, id}) => {
                 return <li className={styles.list__item} key={id}>
-                    <a href='#'>
+                    <Link to={`/characters/${id}`}>
                         <img className={styles.character__img} src={image} alt={name} />
                         <p>{name}</p>
-                    </a>
+                    </Link>
                 </li>
             })}
         </ul>

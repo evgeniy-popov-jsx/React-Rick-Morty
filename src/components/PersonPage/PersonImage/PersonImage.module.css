@@ -1,0 +1,12 @@
+.container {
+    max-width: 250px;
+    max-height: 350px;
+}
+
+.img {
+    width: 100%;
+    min-width: 172px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center center;
+}

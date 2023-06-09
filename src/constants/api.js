@@ -4,3 +4,4 @@ export const API_PARAM_PAGE = '/?page=';
 
 
 export const API_URL = API_ROOT+API_CHARACTER+API_PARAM_PAGE;
+export const API_PERSON = API_ROOT+API_CHARACTER;
