@@ -7,6 +7,7 @@ import { API_PERSON } from '../../constants/api';
 
 import PersonImage from '../../components/PersonPage/PersonImage';
 import PersonInfo from '../../components/PersonPage/PersonInfo';
+import PersonLinkBack from '../../components/PersonPage/PersonLinkBack';
 
 import styles from './PersonPage.module.css';
 
@@ -40,7 +41,8 @@ const PersonalPage = ({ setErrorApi }) => {
 
     return (
         <>
-            <div className={styles.wrapper}>
+            <PersonLinkBack />
+            <div className={styles.wrapper}>                
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
                     <PersonImage personImage={personImage} personName={personName}/>
