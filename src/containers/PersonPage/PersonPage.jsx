@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 import { getApiResources } from '../../utils/network';
@@ -8,13 +8,19 @@ import { API_PERSON } from '../../constants/api';
 import PersonImage from '../../components/PersonPage/PersonImage';
 import PersonInfo from '../../components/PersonPage/PersonInfo';
 import PersonLinkBack from '../../components/PersonPage/PersonLinkBack';
+import UiLoader from '../../components/UI/UiLoader';
 
 import styles from './PersonPage.module.css';
+
+const PersonEpisode = React.lazy(()=> import('../../components/PersonPage/PersonEpisode'));
 
 const PersonalPage = ({ setErrorApi }) => {
     const [ personInfo, setPersonInfo ] = useState(null);
     const [ personName, setPersonName ] = useState(null);
     const [ personImage, setPersonImage ] = useState(null);
+    const [ personEpisode, setPersonEpisode ] = useState(null);
+    console.log()
+
     const { id } = useParams();
 
     useEffect(()=>{
@@ -30,14 +36,15 @@ const PersonalPage = ({ setErrorApi }) => {
                 ]);
                 setPersonName(res.name);
                 setPersonImage(res.image);
-                //res.episode
+                res.episode.length && setPersonEpisode(res.episode);
+
                 setErrorApi(false);
             } else {
                 setErrorApi(true);
             }
         })(); 
 
-    }, []);
+    },[]);
 
     return (
         <>
@@ -46,7 +53,14 @@ const PersonalPage = ({ setErrorApi }) => {
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
                     <PersonImage personImage={personImage} personName={personName}/>
+
                     {personInfo && <PersonInfo  personInfo={personInfo}/>}
+
+                {personEpisode && (
+                    <Suspense fallback={<UiLoader />}>
+                        <PersonEpisode  personEpisode={personEpisode}/>
+                    </Suspense>
+                )}
                 </div>
             </div>
         </>
