@@ -9,6 +9,7 @@ import { useQueryParams } from '../../hooks/useQueryParams';
 import { getCharacterPageId } from '../../services/getCharacterData';
 
 import styles from './CharacterPage.module.css';
+import { getNameOfDeclaration } from 'typescript';
 
 
 const CharacterPage = ({ setErrorApi }) => {

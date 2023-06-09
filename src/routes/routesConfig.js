@@ -1,6 +1,7 @@
 import CharacterPage from '../containers/CharacterPage';
 import HomePage from '../containers/HomePage';
 import NotFoundPage from '../containers/NotFoundPage';
+import PersonalPage from '../containers/PersonPage';
 
 const routesConfig = [
     {
@@ -12,6 +13,11 @@ const routesConfig = [
         path: '/characters', 
         exact: true,
         component: <CharacterPage />,
+    },
+    {
+        path: '/characters/:id', 
+        exact: true,
+        component: <PersonalPage />,
     },
     {
         path: '/not-found', 
