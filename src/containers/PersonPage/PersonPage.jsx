@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
 import React, { useEffect, useState, Suspense } from 'react';
+import { useSelector } from 'react-redux';
 
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 import { getApiResources } from '../../utils/network';
@@ -19,7 +20,9 @@ const PersonalPage = ({ setErrorApi }) => {
     const [ personName, setPersonName ] = useState(null);
     const [ personImage, setPersonImage ] = useState(null);
     const [ personEpisode, setPersonEpisode ] = useState(null);
-    console.log()
+    const [ personFavorite, setPersonFavorite ] = useState(false);
+
+    const store = useSelector(state => state.favoriteReducer);
 
     const { id } = useParams();
 
@@ -28,6 +31,8 @@ const PersonalPage = ({ setErrorApi }) => {
         (async () =>  {
             const res = await  getApiResources(`${API_PERSON}/${id}/`);
             
+            store[id] ? setPersonFavorite(true) : setPersonFavorite(false);
+
             if (res) {
                 setPersonInfo([
                     {title: 'Gender', data: res.gender},
@@ -52,7 +57,7 @@ const PersonalPage = ({ setErrorApi }) => {
             <div className={styles.wrapper}>                
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
-                    <PersonImage personImage={personImage} personName={personName}/>
+                    <PersonImage personImage={personImage} personName={personName} personId={id} personFavorite={personFavorite} setPersonFavorite={setPersonFavorite}/>
 
                     {personInfo && <PersonInfo  personInfo={personInfo}/>}
 
