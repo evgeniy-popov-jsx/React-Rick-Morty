@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
+import { useQueryParams } from '../../hooks/useQueryParams';
+
 import CharacterList from '../../components/CharacterPage/CharacterList/CharacterList';
 import CharacterNavigation from '../../components/CharacterPage/CharacterNavigation';
+
 import { getApiResources } from '../../utils/network';
 import {API_URL} from '../../constants/api';
-import { useQueryParams } from '../../hooks/useQueryParams';
 import { getCharacterPageId } from '../../services/getCharacterData';
-
-import styles from './CharacterPage.module.css';
-import { getNameOfDeclaration } from 'typescript';
-
 
 const CharacterPage = ({ setErrorApi }) => {
     const [ character, setCharacter ] = useState(null);
