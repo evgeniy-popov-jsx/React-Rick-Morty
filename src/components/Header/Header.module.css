@@ -19,20 +19,17 @@
     min-width: 70px;
     border: 2px solid transparent;
     border-radius: 3px;
-    color: var(--bg--accent);
+    color: var(--theme-default-nav);
     text-align: center;
     font-family: sans-serif;
     text-decoration: none;
     font-weight: var(--font-bolt);
-    text-shadow: 0 0 2px rgb(255, 255, 255),
-                 0 0 40px rgb(84, 55, 141);
     transition: var(--transition);
 }
 
 .list__container :global(a.active) {
-    border: 2px solid aquamarine;
+    border: 2px solid var(--theme-default-navBorder);
     border-radius: 3px;
-    color: aquamarine;
 }
 
 .container__logo {

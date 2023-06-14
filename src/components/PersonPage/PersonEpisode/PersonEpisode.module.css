@@ -22,9 +22,11 @@
 .item__colon {
     width: 20px;
     font-weight: var(--font-bolt);
+    background-color: black;
     text-align: center;
 }
 .item__title {
+    background-color: black;
     letter-spacing: 1.2px;
 }
 
