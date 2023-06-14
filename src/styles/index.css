@@ -16,8 +16,22 @@
   --font-bolt: 600;
 
   --transition: .4s;
+
+  --box-shadow-black: 
+      0 16px 24px 2px rgba(0, 0, 0, 0.7),
+      0 6px 30px 5px rgba(0, 0, 0, 0.411),
+      0 8px 10px -5px rgba(0, 0, 0, 0.261);
   
   /* THEMES */
+  --theme-light-navBorder: #36bae6;
+  --theme-dark-navBorder: #b734d2;
+  --theme-inert-navBorder: #cccc46;
+  --theme-default-navBorder: var(--theme-light-navBorder);
+
+  --theme-light-nav: #36bae6;
+  --theme-dark-nav: #b734d2;
+  --theme-inert-nav: #cccc46;
+  --theme-default-nav: var(--theme-light-nav);
 
   --theme-light-header: #36bae6;
   --theme-dark-header: #b734d2;
@@ -30,6 +44,7 @@
   --theme-default-bgImage: var(--theme-light-bgImage);
 
 }
+
 body {
   margin: 0;
   padding: 0;

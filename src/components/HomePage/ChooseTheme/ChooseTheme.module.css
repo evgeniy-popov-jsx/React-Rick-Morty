@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    
+}
+
+.item__light {
+    text-shadow: 0 0 5px green;
+    color: green
+}
+
+
+.item__dark {
+    text-shadow: 0 0 5px green;
+    color: green
+}
+
+
+.item__inert {
+    text-shadow: 0 0 5px green;
+    color: green;
+}
+
+.item__light:hover {
+    box-shadow: 0 0 5px green;
+    color: green
+}
+
+
+.item__dark:hover {
+    box-shadow: 0 0 5px green;
+    color: green
+}
+
+
+.item__inert:hover {
+    box-shadow: 0 0 5px green;
+    color: green;
+}
