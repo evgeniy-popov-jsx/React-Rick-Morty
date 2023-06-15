@@ -3,6 +3,7 @@ import HomePage from '../containers/HomePage';
 import NotFoundPage from '../containers/NotFoundPage';
 import PersonalPage from '../containers/PersonPage';
 import FavoritePage from '../containers/FavoritePage';
+import SearchPage from '../containers/SearchPage';
 
 const routesConfig = [
     {
@@ -24,6 +25,11 @@ const routesConfig = [
         path: '/characters/:id', 
         exact: true,
         component: <PersonalPage />,
+    },
+    {
+        path: '/search', 
+        exact: true,
+        component: <SearchPage />,
     },
     {
         path: '/not-found', 

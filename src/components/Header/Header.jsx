@@ -35,6 +35,7 @@ const Header = () => {
             <ul className={styles.list__container}>
                 <li><NavLink to="/" exact="true">Home</NavLink></li>
                 <li><NavLink to="/characters?page=1">Characters</NavLink></li>
+                <li><NavLink to="/search">Search</NavLink></li>
                 <li><NavLink to="/not-found" exact="true">Not found</NavLink></li>
             </ul>   
             <Favorite />
