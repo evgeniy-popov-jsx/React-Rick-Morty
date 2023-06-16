@@ -8,17 +8,15 @@ const SearchPageInfo = ({ characters }) => {
         <>
             { characters.length
                 ?  (
-                    <ul>
+                    <ul className={styles.list__container}>
                         {characters.map(({ id, name, image })=>{
                             return (
-                                <li key={id}>
+                                <li className={styles.list__item} key={id}>
                                     <Link to={`/characters/${id}`} >
-                                        <img src={image} alt={name} />
-                                        <p>{name}</p>
+                                        <img className={styles.person__photo} src={image} alt={name} />
+                                        <p className={styles.person__name}>{name}</p>
                                     </Link>
-                                    
                                 </li>
-                                
                             )
                         })}
                     </ul>
