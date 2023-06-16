@@ -6,6 +6,8 @@ import { API_SEARCH, API_PARAM_STATUS } from '../../constants/api';
 import { ALIVE, DEAD, UNKNOWN} from '../../constants/status';
 
 import SearchPageInfo from '../../components/SearchPage/SearchPageInfo/SearchPageInfo';
+import ErrorMessage from '../../components/ErrorMessage';
+import UiInput from '../../components/UI/UiInput';
 
 import styles from './SearchPage.module.css';
 
@@ -13,6 +15,7 @@ import styles from './SearchPage.module.css';
 const SearchPage = () => {  
     const [ input, setInput ] = useState('');
     const [ status, setStatus ] = useState('alive');
+    const [ error, setError ] = useState(false);
     const [ characters, setCharacters] = useState([]);
 
     const getResponse = async (param, status) => {
@@ -27,8 +30,12 @@ const SearchPage = () => {
                     image
                 }
             });
+            setError(false);
             setCharacters(characterList);
+        } else {
+           setError(true); 
         }
+        
     }
 
     useEffect(()=>{
@@ -41,10 +48,8 @@ const SearchPage = () => {
         []
     );
 
-    const handleInputChange = (event) => {
-        const value = event.target.value;
+    const handleInputChange = (value) => {
         const thisStatus = status;
-        
         setInput(value);
         debounceGetResponse(value, thisStatus);
     }
@@ -60,27 +65,33 @@ const SearchPage = () => {
     return (
         <>
             <h1 className='header__text'>Search</h1>
-            <input 
-                type=""
-                value={input}
-                onChange={handleInputChange} 
-                placeholder='Input character name'
+          
+            <UiInput 
+                value={input} 
+                handleInputChange={handleInputChange}
+                placeholder='Input Character'
+                classes={styles.input__search}
             />
-            <div className="radio-inputs">
-                <label className="radio">
+           
+            <div className={styles.radio__inputs}>
+                <label className={styles.radio}>
                     <input type="radio" name="radio" value={ALIVE} onChange={handleInputStatus} checked={status === ALIVE ? true : false}/>
-                    <span className="name">Alive</span>
+                    <span className={styles.name}>Alive</span>
                 </label>
-                <label className="radio">
+                <label className={styles.radio}>
                     <input type="radio" name="radio" value={DEAD} onChange={handleInputStatus} checked={status === DEAD ? true : false}/>
-                    <span className="name">Dead</span>
+                    <span className={styles.name}>Dead</span>
                 </label>
-                <label className="radio">
+                <label className={styles.radio}>
                     <input type="radio" name="radio" value={UNKNOWN} onChange={handleInputStatus} checked={status === UNKNOWN ? true : false}/>
-                    <span className="name">Unknown</span>
+                    <span className={styles.name}>Unknown</span>
                 </label>
                 </div>
-            <SearchPageInfo characters={characters}/>
+                
+                {error 
+                    ? <ErrorMessage /> 
+                    : <SearchPageInfo characters={characters}/>
+                }
         </>
     )
 }
