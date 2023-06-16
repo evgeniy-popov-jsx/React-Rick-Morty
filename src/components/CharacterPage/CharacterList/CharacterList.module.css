@@ -9,14 +9,15 @@
 .list__item {
     width: 190px;
     margin: 20px;
-    border-radius: 3px;
-    background-color: var(--bg--accent);
+    border-radius: 5px;
+    background-color: var(--theme-default-bgImage);
     cursor: pointer;
 }
 
 .list__item a {
     text-decoration: none;
-    color: var( --text-color);
+    font-weight: 600;
+    color: var(--theme-default-main);
     text-align: center;
 }
 

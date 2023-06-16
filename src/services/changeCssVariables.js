@@ -9,7 +9,7 @@
 export const changeCssVariables = theme => {
     const root = document.querySelector(':root');
 
-    const cssVarables = ['header', 'bgImage', 'nav', 'navBorder'];
+    const cssVarables = ['header', 'bgImage', 'main', 'accent'];
 
     cssVarables.forEach(element => { 
         root.style.setProperty(
