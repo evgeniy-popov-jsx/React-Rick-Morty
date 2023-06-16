@@ -11,22 +11,23 @@
     display: flex;
     align-items: center;
     margin-bottom: 7px;
-    color: white;
 }
 .item__episode {
     min-width: 90px;
     padding: 5px;
     border-radius: 3px;
-    background-color: var(--bg--accent);
+    background-color: var(--theme-default-accent);
 }
 .item__colon {
     width: 20px;
+    padding: 5px;
+    color: white;
     font-weight: var(--font-bolt);
-    background-color: black;
     text-align: center;
 }
 .item__title {
-    background-color: black;
+    padding: 5px;
+    color: white;
     letter-spacing: 1.2px;
 }
 

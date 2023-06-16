@@ -6,35 +6,35 @@
 }
 
 .item__light {
-    text-shadow: 0 0 5px green;
-    color: green
+    text-shadow: 0 0 5px #1a1e27;
+    color: #1a1e27
 }
 
 
 .item__dark {
-    text-shadow: 0 0 5px green;
-    color: green
+    text-shadow: 0 0 5px #0a0a0a;
+    color: #0a0a0a;
 }
 
 
 .item__inert {
-    text-shadow: 0 0 5px green;
-    color: green;
+    text-shadow: 0 0 5px #1f0c16;
+    color: #27111d;
 }
 
 .item__light:hover {
-    box-shadow: 0 0 5px green;
-    color: green
+    box-shadow: 0 0 5px #00eeff;
+    color: #00eeff
 }
 
 
 .item__dark:hover {
-    box-shadow: 0 0 5px green;
-    color: green
+    box-shadow: 0 0 5px #CA2428;
+    color: #CA2428;
 }
 
 
 .item__inert:hover {
-    box-shadow: 0 0 5px green;
-    color: green;
+    box-shadow: 0 0 5px #D5539B;
+    color: #D5539B;
 }

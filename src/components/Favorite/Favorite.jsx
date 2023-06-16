@@ -11,7 +11,7 @@ const Favorite = () => {
     const store = useSelector(state => state.favoriteReducer);
   
     useEffect(()=>{
-
+        
         const length = Object.keys(store).length;
         length.toString().length > 2 ? setCounter('...') : setCounter(length);
         

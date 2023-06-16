@@ -8,14 +8,14 @@
     font-size: var(--font-size-subHeader);
     font-weight: var(--font-bolt);
     border-radius: 3px 3px 3px 0;
-    color: white;
-    background-color: var(--bg--accent);
+    color: black;
+    background-color: var(--theme-default-accent);
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     padding: var(--spacing-medium);
-    border-left: 5px solid var(--bg--accent);
+    border-left: 5px solid var(--theme-default-accent);
     border-radius: 3px;
 }

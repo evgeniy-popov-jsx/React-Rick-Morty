@@ -2,8 +2,9 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    border-radius: 0.5rem;
-    background-color: rgb(69, 89, 63);
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: var(--theme-default-main);
     box-sizing: border-box;
     box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.903);
     padding: 0.25rem;
@@ -33,6 +34,6 @@
   }
   
   .radio__inputs .radio input:checked + .name {
-    background-color: rgb(185, 228, 129);
+    background-color: var(--theme-default-accent);
     font-weight: 600;
   }

@@ -19,7 +19,7 @@
     min-width: 70px;
     border: 2px solid transparent;
     border-radius: 3px;
-    color: var(--theme-default-nav);
+    color: var(--theme-default-main);
     text-align: center;
     font-family: sans-serif;
     text-decoration: none;
@@ -28,7 +28,7 @@
 }
 
 .list__container :global(a.active) {
-    border: 2px solid var(--theme-default-navBorder);
+    border: 2px solid var(--theme-default-accent);
     border-radius: 3px;
 }
 
