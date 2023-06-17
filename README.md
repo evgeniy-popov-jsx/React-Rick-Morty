@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+# 🧪Rick & Morty React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🌎 Links
 
-## Available Scripts
+- `Project` https://react-rick-morty-pi.vercel.app
+- `Repository` https://github.com/evgeniy-popov-jsx/React-Rick-Morty
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 💾 Available Scripts and Commands
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+# Install
+npm i            # install dependencies
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 📄 API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- https://rickandmortyapi.com (основное API)
+- https://rickandmortyapi.com/documentation (документация API)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✅ Lighthouse Metrics Performance
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![alt text](./test.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚙ Instruments used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### React.js
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Разворачивание приложения с `create-react-app`
+- Состояние компонента (хук `useState`)
+- Жизненный цикл компонента (хук `useEffect`)
+- Context API (хук `useContext`)
+- Рефы и DOM (хук `useRef`)
+- Мемоизация (хук `useCallback`)
+- Создание собственных хуков
+- Фрагменты
+- Паттерн `Higher-Order Component`
+- Паттерн `Подъём состояния`
+- Обработка событий
+- Controlled Components
+- Подключение CSS, `css-modules`, библиотека `classnames`
+- Списки и ключи, `Reconciliation Algorithm`
+- Отложенная загрузка компонентов `React.lazy()`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### React router
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Базовый роутинг
+- URL Parameters
+- Query Parameters
+- Обработка страницы 404 (Not Found)
+- Хуки `useLocation` и `useHistory`
 
-## Learn More
+### Redux
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Базовая структура react-redux-приложения
+- Хуки `useDispatch`, `useSelector`
+- Redux Middleware
+- Создание асинхронных action с библиотекой `redux-thunk`
+- Отслеживание состояния store с `redux-devtools-extension`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Общее
+
+- Continuous Integration, Continuous Delivery `CI/CD`
+- Деплой приложения на `Vercel`
+- Библиотека `lodash` с готовыми функциями
+- `Visual Studio Code`. Сниппеты и плагины
+
+### JavaScript
+
+- Методы работы с массивами: `map`, `filter`, `forEach`
+- Асинхронность: `Promise`, `Async Functions`
+- ES6-модули (import и export)
+- Оператор разворота для объектов (props для компонента)
+- Деструктуризация массивов и объектов
+- Тернарные операторы
+- Работа с Local Storage
+- Работа с API с использованием `Fetch`
+
+### Вёрстка
+
+- CSS Custom Properties, изменение через JavaScript
+- CSS Filters
+- CSS Flexbox
+- CSS Multi Columns
+- Стилизация скроллбара
